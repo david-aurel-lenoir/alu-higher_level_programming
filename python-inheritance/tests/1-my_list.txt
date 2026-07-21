@@ -1,0 +1,85 @@
+The ``1-my_list`` module
+========================
+
+Using ``MyList``
+-----------------
+
+Import the class:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Check instantiation:
+
+    >>> my_list = MyList()
+    >>> my_list
+    []
+
+Check it inherits from list:
+
+    >>> issubclass(MyList, list)
+    True
+
+Check __str__ / regular print:
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> print(my_list)
+    [1, 4]
+
+Check append():
+
+    >>> my_list = MyList()
+    >>> my_list.append(3)
+    >>> my_list
+    [3]
+
+Empty list:
+
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
+Sorted append:
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.print_sorted()
+    [1, 2, 3]
+
+Not sorted append:
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Negative numbers:
+
+    >>> my_list = MyList()
+    >>> my_list.append(-3)
+    >>> my_list.append(-1)
+    >>> my_list.append(-2)
+    >>> my_list.print_sorted()
+    [-3, -2, -1]
+
+print_sorted() returns a new list, original stays untouched:
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
