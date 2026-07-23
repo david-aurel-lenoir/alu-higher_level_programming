@@ -1,0 +1,75 @@
+$ cat tests/4-print_square.txt
+The ``print_square`` function
+===============================
+
+Print a square with the character #.
+
+Basic usage
+-----------
+
+Import the function:
+
+    >>> print_square = __import__('4-print_square').print_square
+
+Print a square of size 4:
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Print a square of size 1:
+
+    >>> print_square(1)
+    #
+
+Print a square of size 0 (nothing printed):
+
+    >>> print_square(0)
+
+The function returns None:
+
+    >>> print_square(2) is None
+    ##
+    ##
+    True
+
+Error handling
+--------------
+
+Raise TypeError when size is not an integer:
+
+    >>> print_square("4")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Raise TypeError when size is a float:
+
+    >>> print_square(4.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Raise TypeError when size is a negative float:
+
+    >>> print_square(-4.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Raise ValueError when size is a negative integer:
+
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Raise TypeError when size is None:
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Raise TypeError when no arguments are given:
+
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'

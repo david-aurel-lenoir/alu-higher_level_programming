@@ -1,0 +1,47 @@
+The ``text_indentation`` function
+====================================
+
+Print a text with 2 new lines after ., ? and :.
+
+Basic usage
+-----------
+
+Import the function:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Print a simple text:
+
+    >>> text_indentation("Hello. How are you? I am fine: thanks")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I am fine:
+    <BLANKLINE>
+    thanks
+
+Print an empty string:
+
+    >>> text_indentation("")
+
+Error handling
+--------------
+
+Raise TypeError when text is not a string:
+
+    >>> text_indentation(12)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Raise TypeError when text is None:
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Raise TypeError when no arguments are given:
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
