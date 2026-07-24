@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all State objects containing the letter 'a' from hbtn_0e_6_usa."""
+"""Changes the name of the State object with id=2 to 'New Mexico'."""
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -15,9 +15,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter(
-        State.name.like('%a%')).order_by(State.id).all()
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    state = session.query(State).filter(State.id == 2).first()
+    if state is not None:
+        state.name = "New Mexico"
+        session.commit()
 
     session.close()
