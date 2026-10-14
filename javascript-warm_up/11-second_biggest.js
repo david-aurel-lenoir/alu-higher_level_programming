@@ -1,10 +1,8 @@
 #!/usr/bin/node
-
-const numbers = process.argv.slice(2).map(Number);
-
-if (numbers.length < 2) {
+const nums = process.argv.slice(2).map(Number);
+if (nums.length < 2) {
   console.log(0);
 } else {
-  numbers.sort((a, b) => a - b);
-  console.log(numbers[numbers.length - 2]);
+  nums.sort((a, b) => b - a);
+  console.log(nums[1]);
 }
